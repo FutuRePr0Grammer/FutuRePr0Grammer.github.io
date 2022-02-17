@@ -7,12 +7,17 @@
 }
 
 /*body tag style, including background image*/
-body{
+html, body{
     background: url("homepage_background.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    /*background-size: cover (or contain?)*/
     height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    /*makes sure that if an element overflows from its edges, that the content is not shown
+        otherwise, the page has white space to the right and a scroll bar*/
+    overflow-x: hidden; 
 }
 
 /*styles for links (unvisited and visited, respectively)*/
@@ -25,10 +30,18 @@ a:visited{
 
 /*styles for the menu of links to the resume etc.*/
 .menu{
+    position: relative;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    position: absolute;
-    margin-left: 80%;
+    margin-left: 55%;
+    margin-right: 0%;
     margin-top: 10%;
+    margin-bottom: 0%;
 }
+
+/*when screen is small, it will make the menu disappear*/
+@media only screen and (max-width: 720px){
+    .menu{display: none;}
+}
+
